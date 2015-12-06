@@ -1,0 +1,8 @@
+name: GatePlugin
+version: 0.1
+author: Namnodorel
+main: de.namnodorel.ardacraft.gates.Gates
+
+commands:
+  gate:
+    description: Command zum Benutzen des GatePlugins. Mehr Informationen unter /gate help
