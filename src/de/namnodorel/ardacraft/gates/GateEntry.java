@@ -14,6 +14,7 @@ public class GateEntry {
 	private List<Area> frames = new ArrayList<>();
 	private List<ModifiedSound> sounds = new ArrayList<>();
 	private Integer waitms = 20;
+	private Integer pausems = 5*20;
 	private Integer actualFrame = 0;
 	private GateMode mode = GateMode.CLICK_EVERYONE;
 	
@@ -100,6 +101,14 @@ public class GateEntry {
 		this.mode = mode;
 	}
 	
+	public Integer getPauseMS() {
+		return pausems;
+	}
+
+	public void setPauseMS(Integer pausems) {
+		this.pausems = pausems;
+	}
+
 	public List<ModifiedSound> getSounds() {
 		return sounds;
 	}

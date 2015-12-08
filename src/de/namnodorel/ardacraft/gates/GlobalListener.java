@@ -55,7 +55,7 @@ public class GlobalListener implements Listener{
 				}
 				
 				//Wait, until the gate has opened (g.getWaitMS()*g.getFrames().size()) and then wait 5 seconds before closing the gate (5*20L)
-			}, g.getWaitMS()*g.getFrames().size() + 5*20L);
+			}, g.getWaitMS()*g.getFrames().size() + g.getPauseMS());
 			
 			//Cancel the event, no player is supposed to break Blocks inside of a gate to prevent spamming
 			e.setCancelled(true);
@@ -129,7 +129,7 @@ public class GlobalListener implements Listener{
 			}
 			
 			//Wait, until the gate has opened (g.getWaitMS()*g.getFrames().size()) and then wait 5 seconds before closing the gate (5*20L)
-		}, g.getWaitMS()*g.getFrames().size() + 5*20L);
+		}, g.getWaitMS()*g.getFrames().size() + g.getPauseMS());
 
 	}
 }
