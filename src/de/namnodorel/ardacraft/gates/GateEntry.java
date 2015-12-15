@@ -155,6 +155,10 @@ public class GateEntry {
 			return false;
 		}
 		
+		if(getActualFrame() + 1 >= frames.size()){
+			return false;
+		}
+		
 		if(frames.isEmpty()){
 			return false;
 		}
@@ -197,6 +201,10 @@ public class GateEntry {
 	public boolean close(){
 		
 		if(isMoving){
+			return false;
+		}
+		
+		if(getActualFrame() - 1 < 0){
 			return false;
 		}
 		

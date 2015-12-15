@@ -34,6 +34,8 @@ public class Area {
 	
 	public Area getFixedArea(){
 		
+		//Try to sort the coordinates to get one with all small values and one with all big ones
+		
 		Area a = new Area();
 		
 		Location l1 = getFirstLocation();
@@ -59,6 +61,9 @@ public class Area {
 	}
 	
 	public int getXDimension(){
+		
+		//Calculate the x-dimension (needed to get the volume)
+		
 		Location first = getFixedArea().getFirstLocation();
 		Location second = getFixedArea().getSecondLocation();
 		
@@ -71,6 +76,8 @@ public class Area {
 	}
 	public int getYDimension(){
 		
+		//Calculate the y-dimension (needed to get the volume)
+		
 		Location first = getFixedArea().getFirstLocation();
 		Location second = getFixedArea().getSecondLocation();
 		
@@ -82,6 +89,8 @@ public class Area {
 		return y;
 	}
 	public int getZDimension(){
+		
+		//Calculate the z-dimension (needed to get the volume)
 		
 		Location first = getFixedArea().getFirstLocation();
 		Location second = getFixedArea().getSecondLocation();
@@ -96,7 +105,10 @@ public class Area {
 	
 	public boolean isInside(Location loc){
 		
+		//Trys to figure out wether or not the given location is inside this area
+		
 		Area a = getFixedArea();
+		
 		if(a.getFirstLocation().getX() >= loc.getX() && a.getFirstLocation().getY() >= loc.getY() && a.getFirstLocation().getZ() >= loc.getZ()){
 			if(a.getSecondLocation().getX() <= loc.getX() && a.getSecondLocation().getY() <= loc.getY() && a.getSecondLocation().getZ() <= loc.getZ()){
 				return true;

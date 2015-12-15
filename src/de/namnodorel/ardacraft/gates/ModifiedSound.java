@@ -2,6 +2,7 @@ package de.namnodorel.ardacraft.gates;
 
 import org.bukkit.Sound;
 
+//Class used to save a sound together with its settings
 public class ModifiedSound {
 	
 	private Sound sound = null;

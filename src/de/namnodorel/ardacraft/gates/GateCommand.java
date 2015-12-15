@@ -39,7 +39,7 @@ public class GateCommand implements CommandExecutor{
 			if(!(sender instanceof Player)){
 				System.err.println("[GatesPlugin]: Diese Befehl kann nur von Spielern ausgeführt werden!");
 			}else{
-				//We know now fpr sure that a player used the command
+				//We know now for sure that a player used the command
 				Player p = (Player)sender;
 				
 				//Configure the item
