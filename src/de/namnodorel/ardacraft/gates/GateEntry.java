@@ -1,12 +1,14 @@
 package de.namnodorel.ardacraft.gates;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class GateEntry {
+@SuppressWarnings("serial")
+public class GateEntry implements Serializable{
 	
 	private Area area = new Area();
 	private String name = "NAME-UNDEFINED";
@@ -251,7 +253,7 @@ public class GateEntry {
 	void playSounds(){
 		
 		//TODO Add real world name
-		for(Player p : Bukkit.getServer().getWorld("world").getPlayers()){
+		for(Player p : Bukkit.getServer().getWorld("RPG").getPlayers()){
 			if(p.getLocation().distance(getArea().getFirstLocation()) <= 10 || p.getLocation().distance(getArea().getSecondLocation()) <= 10){
 				
 				for(ModifiedSound ms : getSounds()){

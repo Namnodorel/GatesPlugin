@@ -61,8 +61,6 @@ public class GateCommand implements CommandExecutor{
 		//Let the player create Gates
 		}else if(args[0].equalsIgnoreCase("create")){
 			
-			//TODO Add saving in database
-			
 			//The console can't make selections
 			if(!(sender instanceof Player)){
 				System.err.println("[GatesPlugin]: Diese Befehl kann nur von Spielern ausgeführt werden!");
@@ -84,7 +82,7 @@ public class GateCommand implements CommandExecutor{
 				
 				//The name needs to be unique
 				if(Data.gates.containsKey(args[1])){
-					p.sendMessage("§cEin Tor mit diesem Namen exestiert bereits!");
+					p.sendMessage("§cEin Tor mit diesem Namen existiert bereits!");
 					return true;
 				}
 				
@@ -574,9 +572,6 @@ public class GateCommand implements CommandExecutor{
 					}
 					
 				}
-				
-				//Remove gate from database
-				Data.removeGateFromDatabase(args[1]);
 				
 				//Send success message
 				sender.sendMessage("§aDas Tor wurde entfernt!");

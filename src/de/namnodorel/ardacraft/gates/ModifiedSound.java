@@ -1,9 +1,12 @@
 package de.namnodorel.ardacraft.gates;
 
+import java.io.Serializable;
+
 import org.bukkit.Sound;
 
 //Class used to save a sound together with its settings
-public class ModifiedSound {
+@SuppressWarnings("serial")
+public class ModifiedSound implements Serializable{
 	
 	private Sound sound = null;
 	private Float volume = 1.0F;

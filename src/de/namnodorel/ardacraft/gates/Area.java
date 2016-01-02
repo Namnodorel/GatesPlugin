@@ -1,18 +1,21 @@
 package de.namnodorel.ardacraft.gates;
 
+import java.io.Serializable;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
-public class Area {
+@SuppressWarnings("serial")
+public class Area implements Serializable{
 	
-	private Location first = null;
-	private Location second = null;
+	private Data.SerLocation first = null;
+	private Data.SerLocation second = null;
 	
 	
 	//Constructor to copy existing areas
 	public Area(Area existing){
-		first = existing.first.clone();
-		second = existing.second.clone();
+		first = new Data.SerLocation().setWorld(existing.getFirstLocation().getWorld().getName()).setX((int)existing.getFirstLocation().getX()).setY((int)existing.getFirstLocation().getY()).setZ((int)existing.getFirstLocation().getZ());
+		second = new Data.SerLocation().setWorld(existing.getSecondLocation().getWorld().getName()).setX((int)existing.getSecondLocation().getX()).setY((int)existing.getSecondLocation().getY()).setZ((int)existing.getSecondLocation().getZ());
 	}
 	
 	public Area() {
@@ -20,16 +23,20 @@ public class Area {
 	}
 
 	public Location getFirstLocation() {
-		return first;
+		Location l = new Location(Bukkit.getWorld(first.getWorld()), first.getX(), first.getY(), first.getZ());
+		return l;
 	}
 	public void setFirstLocation(Location first) {
-		this.first = first;
+		Data.SerLocation l = new Data.SerLocation().setWorld(first.getWorld().getName()).setX((int) first.getX()).setY((int)first.getY()).setZ((int)first.getZ());
+		this.first = l;
 	}
 	public Location getSecondLocation() {
-		return second;
+		Location l = new Location(Bukkit.getWorld(second.getWorld()), second.getX(), second.getY(), second.getZ());
+		return l;
 	}
 	public void setSecondLocation(Location second) {
-		this.second = second;
+		Data.SerLocation l = new Data.SerLocation().setWorld(second.getWorld().getName()).setX((int) second.getX()).setY((int)second.getY()).setZ((int)second.getZ());
+		this.second = l;
 	}
 	
 	public Area getFixedArea(){
@@ -52,8 +59,8 @@ public class Area {
 		z1 = Integer.max((int)l1.getZ(), (int)l2.getZ());
 		z2 = Integer.min((int)l1.getZ(), (int)l2.getZ());
 		
-		a.setFirstLocation(new Location(Bukkit.getWorld("world"), x1, y1, z1));
-		a.setSecondLocation(new Location(Bukkit.getWorld("world"), x2, y2, z2));
+		a.setFirstLocation(new Location(Bukkit.getWorld("RPG"), x1, y1, z1));
+		a.setSecondLocation(new Location(Bukkit.getWorld("RPG"), x2, y2, z2));
 		
 		//TODO Add real world name
 		

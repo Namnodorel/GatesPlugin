@@ -7,7 +7,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.permissions.Permission;
 
 
 public class GlobalListener implements Listener{
@@ -61,10 +60,7 @@ public class GlobalListener implements Listener{
 			e.setCancelled(true);
 			return;
 		}
-		//Check wether or not the player is allowed to create gates
-		if(!e.getPlayer().hasPermission(new Permission("de.namnodorel.ardacraft.gates.create"))){
-			return;
-		}
+		
 		//Check wether or not the player has the required Item
 		if(!(e.getPlayer().getItemInHand().hasItemMeta() && e.getPlayer().getItemInHand().getItemMeta().hasLore() && e.getPlayer().getItemInHand().getItemMeta().getLore().contains("Tool zum Erstellen von animierten Toren"))){
 			return;

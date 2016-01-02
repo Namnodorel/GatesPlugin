@@ -1,6 +1,8 @@
 package de.namnodorel.ardacraft.gates;
 
-public enum GateMode {
+import java.io.Serializable;
+
+public enum GateMode implements Serializable{
 	
 	//Gate automatically opens for everyone
 	AUTO_EVERYONE, 
